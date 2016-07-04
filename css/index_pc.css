@@ -1,0 +1,165 @@
+@charset "utf-8";
+*{margin:0; padding:0;}
+/* 
+	set overflow-y property to prevent scroll bar mess up the whole layout
+*/
+body{margin:0; padding:0; overflow: hidden; color:#fff;}
+li{list-style-type:none;}
+#view{ position:relative;}
+#frame{ position:relative; z-index:9; }
+/* styled just for clear visual division of each areas */
+#bgs{ position:absolute; left:0; top:0; width:100%; height:100%;}
+#bgs li{ width:100%; height:100%; position:absolute; left:0; top:0; background-position:center; background-repeat:no-repeat; background-size:cover; animation:scale ease 20s infinite; -webkit-animation:scale ease 20s infinite}
+@keyframes scale{
+	from{ transform:scale(1.6,1.6)}
+	to{ transform:scale(1,1)}	
+}
+@-webkit-keyframes scale{
+	from{ -webkit-transform:scale(1.6,1.6)}
+	to{ -webkit-transform:scale(1,1)}	
+}
+#bgs li.f1{ background-image:url(../images/bg01.jpg); z-index:1}
+#bgs li.f2{ background-image:url(../images/bg02.jpg); z-index:2}
+#bgs li.f3{ background-image:url(../images/bg03.jpg); z-index:3}
+#bgs li.f4{ background-image:url(../images/bg04.jpg); z-index:4}
+#bgs li.f5{ background-image:url(../images/bg05.jpg); z-index:5}
+.center{ width:1200px; margin:0 auto; height:100%; box-sizing:border-box; }
+.op-section{ background-position:center;background-repeat:no-repeat; background-size:cover;position:relative; overflow:hidden}
+.section1{ background-image:url(../images/ts_bg01.png);}
+.section2{ background-image:url(../images/ts_bg02.png);}
+.section3{ background-image:url(../images/ts_bg03.png);}
+.section4{ background-image:url(../images/ts_bg04.png);}
+.section5{ background-image:url(../images/ts_bg05.png);}
+/*第一屏*/
+.section1 .title_bg1{ width:100%; height:36px; background:url(../images/home_07.png) no-repeat center; background-size:360px; position:absolute; left:0; top:40%}
+.section1 .logo{ width:100%; height:116px; position:absolute; left:33%; top:8%; background:url(../images/home_03.png) no-repeat left center; background-size:180px; }
+.section1 .djs{ width:270px; height:40px; position:absolute; left:50%; top:50%; background:url(../images/home02_18.png) no-repeat left center; margin-left:-135px; background-size:100px; padding-left:122px; box-sizing:border-box; }
+.section1 .a_href{ width:180px; position:absolute;position:absolute; right:34%; top:15%; cursor:pointer;  }
+.section1 .djs span{ display:inline-block; width:28px; height:36px; border:1px solid #b0aaaa; background:rgba(255,255,255,0.12); color:#fff; text-align:center; line-height:36px; font-size:20px; font-style:italic; font-family:Arial;margin-right:6px;}
+.section1 .f_bot{ width:490px;  position:absolute; left:50%; bottom:10%; margin-left:-245px;}
+.section1 .f_bot img{ float:left; width:162px;}
+.section1 .f_bot a{ display:block; width:292px; height:64px; background-position:center; background-repeat:no-repeat; background-size:292px; float:right; margin-bottom:20px; cursor:pointer;}
+.section1 .f_bot a.ios{ background-image:url(../images/home_20.png)}
+.section1 .f_bot a.android{ background-image:url(../images/home_25.png)}
+.section1 .f_bot a.ios:hover{ background-image:url(../images/home_18.png)}
+.section1 .f_bot a.android:hover{ background-image:url(../images/home_27.png)}
+/*第二屏*/
+.section2 .phone_bg{ width:390px; height:640px; background:url(../images/fenbei_06.png) no-repeat center; background-size:390px; position:absolute; left:24%; top:50%; margin-top:-320px;}
+.section2 .phone_bg .lyrics{ position:absolute; width:100%; left:0; top:58%;}
+.section2 .phone_bg p{ background-position:left center; background-repeat:no-repeat;}
+.section2 .phone_bg .p1{ height:23px; background-image:url(../images/fenbei_25.png); background-size:218px; transform:translateX(-100px); opacity:0; transition:all ease 0.8s; transition-delay:1.6s}
+.section2 .phone_bg .p2{ height:21px; background-image:url(../images/fenbei_37.png); background-size:182px; background-position:140px center; margin:8px 0 44px;transform:translateX(-100px); opacity:0; transition:all ease 0.8s; transition-delay:1.8s}
+.section2 .phone_bg .p3{ height:16px; background-image:url(../images/fenbei_41.png); background-size:180px; background-position:34px center; margin-bottom:6px;opacity:0; transform:translateY(20px); transition:all ease 0.8s; transition-delay:2s;}
+.section2 .phone_bg .p4{ height:16px; background-image:url(../images/fenbei_44.png); background-size:180px;background-position:34px center;opacity:0; transform:translateY(20px); transition:all ease 0.8s; transition-delay:2.2s;}
+.section2 .phone_bg .gonggao_img{ width:114px; height:154px; background:url(../images/fenbei_54.png) no-repeat center; background-size:100%; position:absolute; left:252px; top:144px; transform:rotateY(0); transition:all ease 0.8s; transition-delay:2.4s;}
+.section2 .title_bg2{ width:176px; height:19px; background:url(../images/fenbei_09.png) no-repeat center; background-size:cover;position:absolute; left:50%; top:44%; opacity:0; transform:translateY(100px); transition:all ease 0.8s; transition-delay:0.4s;}
+.section2 .title_bg3{ width:290px; height:24px; background:url(../images/fenbei_17.png) no-repeat center; background-size:cover;position:absolute; left:50%; top:54%; opacity:0; transform:translateY(100px); transition:all ease 0.8s; transition-delay:0.8s;}
+.section2.active .title_bg2,.section2.active .title_bg3{ opacity:1; transform:translateY(0);}
+.section2.active .phone_bg .p1{ transform:translateX(0); opacity:1}
+.section2.active .phone_bg .p2{ transform:translateX(0); opacity:1}
+.section2.active .phone_bg .p3,.section2.active .phone_bg .p4{opacity:1; transform:translateY(0);}
+.section2.active .phone_bg .gonggao_img{ transform:rotateY(360deg)}
+/*第三屏*/
+.section3 .phone_bg2{ width:320px; height:636px; background:url(../images/major_09.png) no-repeat center; background-size:cover;position:absolute; right:26%; top:50%; margin-top:-318px;}
+.phone_bg2 .item1{ position:absolute; width:100%; left:8px; top:240px;}
+.phone_bg2 .item1 span{ display:inline-block; background-position:center; background-repeat:no-repeat; background-size:cover; vertical-align:middle;}
+.phone_bg2 .x1{ width:120px; height:70px; background-image:url(../images/major_43.png); opacity:0; transform:translate3d(0,-60%,0); transition:all ease 0.8s; transition-delay:2.2s;}
+.phone_bg2 .x2{ width:58px; height:22px; background-image:url(../images/major_54.png);opacity:0; transform:translate3d(0,-100%,0); transition:all ease 0.8s; transition-delay:2.4s;}
+.phone_bg2 .x3{ width:58px; height:22px; background-image:url(../images/major_56.png);opacity:0; transform:translate3d(0,-100%,0); transition:all ease 0.8s; transition-delay:2.6s;}
+.phone_bg2 .item3{ width:454px; height:174px; background:url(../images/major_89.png) no-repeat center; background-size:cover; position:absolute; left:-62px; top:290px; opacity:0; transform:scale(0.8,0.8); transition:all ease 0.8s; transition-delay:1.4s}
+.phone_bg2 .item2{ width:368px; height:314px; background:url(../images/major_76.png) no-repeat center; background-size:cover; position:absolute; left:-24px; top:294px; opacity:0; transform:translate3d(0,100%,0); transition:all ease 0.8s; transition-delay:0.6s;}
+.title_bg4{ width:182px; height:16px; background:url(../images/major_20.png) no-repeat center; background-size:cover; position:absolute; right:53%; top:44%; opacity:0; transform:translate3d(0,100px,0); transition:all ease 0.8s; transition-delay:0.6s;}
+.title_bg5{ width:326px; height:26px; background:url(../images/major_28.png) no-repeat center; background-size:cover; position:absolute; right:53%; top:56%; opacity:0; transform:translate3d(0,100px,0); transition:all ease 0.8s; transition-delay:0.8s;}
+.section3.active .phone_bg2 .item2{ opacity:1; transform:translate3d(0,0,0)}
+.section3.active .phone_bg2 .item3{ opacity:1; transform:scale(1,1)}
+.section3.active .phone_bg2 .x1{ opacity:1; transform:translate3d(0,0,0);}
+.section3.active .phone_bg2 .x2{ opacity:1; transform:translate3d(0,0,0);}
+.section3.active .phone_bg2 .x3{ opacity:1; transform:translate3d(0,0,0);}
+.section3.active .title_bg4{opacity:1; transform:translate3d(0,0,0);}
+.section3.active .title_bg5{opacity:1; transform:translate3d(0,0,0);}
+/*第四屏*/
+.phone_bg3{ width:320px; height:636px;background:url(../images/singer_09.png) no-repeat center; background-size:cover; position:absolute; left:22%; top:50%; margin-top:-318px; }
+.phone_bg3 .item{ width:470px; height:196px; background:url(../images/singer_77.png) no-repeat center; background-size:cover; position:absolute; left:-70px; top:154px; opacity:0; transform:scale(0.8,0.8); transition:all ease 0.8s; transition-delay:0.8s;}
+.phone_bg3 ul{ width:394px; height:100%; overflow:hidden; white-space:nowrap; margin:44px 0 0 40px;}
+.phone_bg3 li{ display:inline-block; width:90px; height:90px; border-radius:4px; overflow:hidden; opacity:0; transition:all ease 0.8s;}
+.phone_bg3 li:nth-child(1){ transform:translate3d(100%,0,0); transition-delay:1.8s;}
+.phone_bg3 li:nth-child(2){ transform:translate3d(200%,0,0); transition-delay:2s;}
+.phone_bg3 li:nth-child(3){ transform:translate3d(300%,0,0); transition-delay:2.2s;}
+.phone_bg3 li:nth-child(4){ transform:translate3d(400%,0,0); transition-delay:2.4s;}
+.phone_bg3 li:nth-child(5){ transform:translate3d(500%,0,0); transition-delay:2.6s;}
+.phone_bg3 li img{ width:100%;}
+.phone_bg3 .header_img{ width:122px; height:110px; background:url(../images/singer_31.png) no-repeat center; background-size:cover; position:absolute; left:0; top:-40px; opacity:0; transform:translate3d(0,-50%,0); transition:all ease 0.8s; transition-delay:1.4s;}
+.section4 .title_bg6{ width:162px; height:22px; background:url(../images/singer_15.png) no-repeat center; background-size:cover;position:absolute; left:50%; top:44%; opacity:0; transform:translate3d(0,100px,0); transition:all ease 0.8s; transition-delay:0.6s;}
+.section4 .title_bg7{ width:408px; height:24px; background:url(../images/singer_22.png) no-repeat center; background-size:cover;position:absolute; left:50%; top:54%; opacity:0; transform:translate3d(0,100px,0); transition:all ease 0.8s; transition-delay:0.8s; }
+.section4.active .phone_bg3 .item{ opacity:1; transform:scale(1,1)}
+.section4.active .phone_bg3 .header_img{opacity:1; transform:translate3d(0,0,0);}
+.section4.active .phone_bg3 li{ opacity:1;transform:translate3d(0,0,0);}
+.section4.active .title_bg6{ opacity:1; transform:translate3d(0,0,0)}
+.section4.active .title_bg7{ opacity:1; transform:translate3d(0,0,0)}
+/*第五屏*/
+.section5 .phone_bg4{ width:320px; height:638px; background:url(../images/agent_17.png) no-repeat center; background-size:cover;position:absolute; right:26%; top:50%; margin-top:-319px;}
+.phone_bg4 ul{ position:absolute; width:100%; left:0; top:200px;}
+.phone_bg4 li{ transition:all ease 0.8s; transition-delay:0.8s;transform:scale(0.9,0.9);}
+.section5 .phone_bg4 .x4{ transform:scale(0.9,0.9) translateY(20px); }
+.phone_bg4 li img{ width:100%}
+.title_bg8{ width:148px; height:18px; background:url(../images/agent_11.png) no-repeat center; background-size:cover; position:absolute; right:53%; top:44%;opacity:0; transform:translate3d(0,100px,0); transition:all ease 0.8s; transition-delay:0.6s;}
+.title_bg9{ width:411px; height:26px; background:url(../images/agent_25.png) no-repeat center; background-size:cover; position:absolute; right:53%; top:56%;opacity:0; transform:translate3d(0,100px,0); transition:all ease 0.8s; transition-delay:0.8s;}
+.section5.active .phone_bg4 .x1{ transform:scale(1.1,1.1); transition-delay:0.8s;}
+.section5.active .phone_bg4 .x2{ transform:scale(1.2,1.2); transition-delay:1s}
+.section5.active .phone_bg4 .x3{transform:scale(1.1,1.1); transition-delay:1.2s}
+.section5.active .title_bg8{ opacity:1;transform:translate3d(0,0,0);}
+.section5.active .title_bg9{ opacity:1;transform:translate3d(0,0,0);}
+/*侧边导航*/
+#radioWrap{ 
+	width:20px;
+	height:180px;
+	position:absolute;
+	right:3%;
+	top:50%;
+	margin-top: -90px;
+	z-index:9;
+	background:url(../images/home_11.png) no-repeat left 144px;
+}
+#radio{width:100%; height:100%; overflow: hidden;}
+#radio li{
+	width:14px;
+	height:14px;
+	border:1px solid #fff;
+	text-indent: -10000px;
+	border-radius: 50%;
+	margin-top: 15px;
+	cursor:pointer;
+	box-sizing:border-box;
+}
+#radio li:first-child{margin-top:0;}
+/* 
+	set position to absolute(essential).
+	use margin to adjust gaps between LIs because ApplikeOnePage.js uses .outerHeight(true) method
+	to measure the interval gap to which each radio buttons are placed.
+*/
+#radioOn{
+	width:14px;
+	height:14px;
+	margin-bottom:15px;
+	position: absolute;
+	top:0; left:0;
+	background-color: #fff;
+	border-radius: 50%;}
+@media all and (max-height:600px){
+	.center{ transform:scale(0.8,0.8)}
+	.section2 .phone_bg{ left:20%;}
+	.section3 .phone_bg2,.section5 .phone_bg4{ right:22%;}
+	.section4 .phone_bg3{ left:18%}
+}
+.footer{ position:absolute; width:100%; left:0; bottom:14px;color:#888; margin:0; font-size:12px; z-index:9; text-align:center;}
+.footer a{ text-decoration:none; color:#888;}
+.footer a:hover{ color:#bfbfbf;}
+.footer a:active{ color:#bfbfbf;}
+/*公告面板*/
+.gonggao_bg{ display:none; position:fixed; left:0; top:0; bottom:0; right:0; background:rgba(0,0,0,0.7); z-index:10;}
+.gonggao_bg .main{ width:586px; height:352px; background:#fff; border-radius:4px; position:absolute; left:50%; top:20%; margin-left:-294px; padding:28px 26px; box-sizing:border-box;}
+.gonggao_bg h3{ color:#ec8400; font-size:22px; border-bottom:1px solid #ec8400; text-align:center; padding:0 0 20px; }
+.gonggao_bg h4{ font-size:16px; color:#161616; margin:26px 0 10px;}
+.gonggao_bg p{ color:#686868; font-size:12px; line-height:30px;}
+.gonggao_bg span{ display:block; text-align:right;color:#686868; font-size:12px; margin-top:20px;}
+.gonggao_bg .btn_close{ position:absolute; width:38px; height:38px; border-radius:100%; background:#cecece url(../images/login_Recharge_03.png) no-repeat center; right:-19px; top:-19px; border:none; outline:none; cursor:pointer;}
